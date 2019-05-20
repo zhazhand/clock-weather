@@ -1,0 +1,5 @@
+<div class="d-flex align-items-center justify-content-center h-100">
+  <h1 (click)="changeFormat()" (contextmenu) = "changeDemonstration($event)">
+    {{ time | async | date : format }}
+  </h1>
+</div>
