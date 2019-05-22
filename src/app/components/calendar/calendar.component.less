@@ -1,13 +1,29 @@
 @mainColor: #000080;
-@secondaryColor:#fff;
-h1 {
-  color: @mainColor;
-  background: @secondaryColor;
-  padding: 0 1rem;
+@secondaryColor: #fff;
 
-&:hover {
-    color: @secondaryColor;
-    background:@mainColor;
+div {
+  display: flex;
+  margin: 5rem 0;
+
+  h1 {
+    margin: 0 auto;
+    font-size: 2rem;
+    color: @mainColor;
+    background: @secondaryColor;
+    padding: 0 1rem;
+
+    &:hover {
+      color: @secondaryColor;
+      background: @mainColor;
+    }
+
   }
+}
 
+div {
+  display: flex;
+
+  * {
+    margin: 0 auto;
+  }
 }

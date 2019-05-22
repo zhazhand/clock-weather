@@ -1,0 +1,36 @@
+<div *ngIf="cityWeather">
+  <h2>Weather in <br>{{cityWeather.name}}, {{cityWeather.sys.country}}</h2>
+  <h3>Temperature {{cityWeather.main.temp | temperature}}°C</h3>
+  <h4>{{cityWeather.weather[0].description}}</h4>
+  <h4>{{cityWeather.dt * 1000 | date : 'HH:mm MMMM, dd'}}</h4>
+   <table>
+    <tr>
+      <td>Wind</td>
+      <td>Speed {{cityWeather.wind.speed | number:'1.1-1'}} m/s, {{cityWeather.wind.deg | windPipe}} ({{cityWeather.wind.deg}})</td>
+    </tr>
+    <tr>
+      <td>Cloudiness</td>
+      <td>Sky is {{cityWeather.weather[0].main | lowercase}}</td>
+    </tr>
+    <tr>
+      <td>Pressure</td>
+      <td>{{cityWeather.main.pressure}} hpa</td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td>{{cityWeather.main.humidity}} %</td>
+    </tr>
+    <tr>
+      <td>Sunrise</td>
+      <td>{{cityWeather.sys.sunrise * 1000 | date : 'HH:mm'}}</td>
+    </tr>
+    <tr>
+      <td>Sunset</td>
+      <td>{{cityWeather.sys.sunset * 1000 | date : 'HH:mm'}}</td>
+    </tr>
+    <tr>
+      <td>Geo coords</td>
+      <td>[{{cityWeather.coord.lat}}, {{cityWeather.coord.lon}}]</td>
+    </tr>
+  </table>
+</div>

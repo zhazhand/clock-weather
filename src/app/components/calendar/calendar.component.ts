@@ -10,11 +10,11 @@ import 'rxjs/Rx';
 })
 export class CalendarComponent implements OnInit {
 
-  public time = new Observable < string > ((observer: Observer < string > ) => {
+  private time = new Observable < string > ((observer: Observer < string > ) => {
     setInterval(() => observer.next(new Date().toString()), 1000);
   });
 
-  public typeOfFormat: number;
+  private typeOfFormat: number;
 
   get format(): string {
     switch (this.typeOfFormat) {
